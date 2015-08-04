@@ -1,21 +1,23 @@
 //
-//  MHCreatableViewController.m
-//  mediaHound
+//  HNDCreatableViewController.m
+//  HNDCreatableViewController
 //
 //  Created by Dustin Bachrach on 9/24/14.
-//  Copyright (c) 2014 Media Hound. All rights reserved.
+//  Copyright (c) 2014 MediaHound. All rights reserved.
 //
 
-#import "MHCreatableViewController.h"
+#import "HNDCreatableViewController.h"
 
 
-@implementation MHCreatableViewControllerMixin
+@implementation HNDCreatableViewControllerMixin
 
 + (instancetype)create
 {
     NSString* viewControllerStoryboard = [self viewControllerStoryboard];
     NSString* viewControllerIdentifier = [self viewControllerIdentifier];
     if (!viewControllerStoryboard || !viewControllerIdentifier) {
+        // If the ViewController did not implement the necesarry functions,
+        // just fall back on a basic alloc init.
         return [[self alloc] init];
     }
     else {
@@ -26,11 +28,13 @@
 
 + (NSString*)viewControllerIdentifier
 {
+    // The ViewController that mixes this in, should override this method.
     return nil;
 }
 
 + (NSString*)viewControllerStoryboard
 {
+    // The ViewController that mixes this in, should override this method.
     return nil;
 }
 
