@@ -7,7 +7,7 @@
 
 ## What is HNDCreatableViewController
 
-We often want to construct View Controllers that we designed in Storyboards. If you want to load these ViewControllers, you need to tightly couple your code that creates the View Controller to know which Storyboard they are defined in. Using HNDCreatableViewController, we store that information directly in the View Controller so that other parts of our application can simply `create` a View Controller without having to know which Storyboard implements it.
+We often want to construct View Controllers that we designed in Storyboards. If you want to load these View Controllers, you need to tightly couple your code that creates the View Controller to know which Storyboard hosts the View Controller. Using HNDCreatableViewController, we store that information directly in the View Controller, so that other parts of our application can simply `create` a View Controller without having to know which Storyboard implements it.
 
 Consider a `MyAwesomeViewController`, which is designed inside the `Awesome.storyboard` and has a View Controller Identifier of `TotesAwesome`.
 
@@ -39,7 +39,7 @@ We then implement `MyAwesomeViewController` and define its Storyboard and View C
 
 We used [AtSugar](https://github.com/MediaHound/AtSugar) and [AtSugarMixin](https://github.com/MediaHound/AtSugarMixin) to make the implementation short and to the point.
 
-That's it. Now if you want to create a `MyAwesomeViewController` from somewhere else in your code you can just do:
+That's it. Now if you want to create a `MyAwesomeViewController` from somewhere else in your code, you can just do:
 
 ```objc
 MyAwesomeViewController* vc = [MyAwesomeViewController create];
@@ -49,7 +49,7 @@ MyAwesomeViewController* vc = [MyAwesomeViewController create];
 ## Installation
 
 HNDCreatableViewController is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following lines to your Podfile. Note: you should use [AtSugar](https://github.com/MediaHound/AtSugar) and [AtSugarMixin](https://github.com/MediaHound/AtSugarMixin), so add it to your Podfile as well.
+it, simply add the following lines to your Podfile. *Note:* we recommend using [AtSugar](https://github.com/MediaHound/AtSugar) and [AtSugarMixin](https://github.com/MediaHound/AtSugarMixin), so add it to your Podfile as well.
 
 ```ruby
 pod "HNDCreatableViewController"
